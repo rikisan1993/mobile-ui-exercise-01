@@ -84,23 +84,33 @@ export class HomePage implements OnInit {
       datasets: [
         {
           label: 'This week',
-          data: [10, 40, 20, 50, 30, 60, 40],
+          data: (() => {
+            let arr = [];
+            for(let i = 0; i < 7; i++ ) {
+              arr.push(Math.round(Math.random() * 100));
+            }
+            return arr;
+          })(),
           backgroundColor: gradientThisWeek,
           borderColor: '#E77B8C',
           borderWidth: 2,
           pointBackgroundColor: 'transparent',
           pointBorderColor: 'transparent',
-          lineTension: 0.40,
         },
         {
           label: 'Previous week',
-          data: [40, 10, 50, 20, 60, 30, 40,],
+          data: (() => {
+            let arr = [];
+            for(let i = 0; i < 7; i++ ) {
+              arr.push(Math.round(Math.random() * 100));
+            }
+            return arr;
+          })(),
           backgroundColor: gradientPrevWeek,
           borderColor: '#FAD1B0',
           borderWidth: 2,
           pointBackgroundColor: 'transparent',
           pointBorderColor: 'transparent',
-          lineTension: 0.40,
         }
       ]
     };
