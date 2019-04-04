@@ -7,12 +7,12 @@ import { Chart } from 'chart.js';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  @ViewChild('lineChart') canvas:ElementRef;
+  @ViewChild('lineChart') canvas: ElementRef;
   public context: CanvasRenderingContext2D;
 
   chartLine = [];
-  
-  options = {    
+
+  options = {
     legend: {
       display: false,
     },
@@ -69,7 +69,7 @@ export class HomePage implements OnInit {
     let gradientPrevWeek = this.context.createLinearGradient(0, 0, 0, 150);
     gradientPrevWeek.addColorStop(0, '#fae5d5');
     gradientPrevWeek.addColorStop(1, '#ffffff');
-    
+
     let multiply = {
       beforeDatasetsDraw: function (chart, options, el) {
         chart.ctx.globalCompositeOperation = 'multiply';
